@@ -1,12 +1,12 @@
 # Controls List API
 
-## Promblem Statement
+## Problem Statement
 
 The Web platform offers two solutions for websites with regards to media controls:
 * use the browser provided ones (aka. native controls) without any control of the available features, user experience or UI;
 * implement custom controls which creates complexity, maintainance burden and isn't future forward.
 
-This situation pushes websites to extreme: they have to either not care about their media controls experience or have to fully commit to it. This lake of middle ground pushes websites to use custom controls as soon as they have one need that isn't compatible with the default browser experience. This is harming the ecosystem because custom controls can often offer lower quality implementation and prevents the browser from creating a homogenious experience for its users or integrate new system features into the website controls.
+This situation pushes websites to extreme: they have to either not care about their media controls experience or have to fully commit to it. This lack of middle ground pushes websites to use custom controls as soon as they have one need that isn't compatible with the default browser experience. This is harming the ecosystem because custom controls can often offer lower quality implementation and prevents the browser from creating a homogenious experience for its users or integrate new system features into the website controls.
 
 # Main Requirements
 
