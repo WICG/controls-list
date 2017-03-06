@@ -12,7 +12,7 @@ limited amount of features.
 The current control web developers have over the `HTMLMediaElement` controls is
 via the `controls` attribute which is a boolean attribute. In other words, web
 developers can tell the user agent whether controls should be shown.
-Historically, specific use cases have been handled with “custom controls” which
+Historically, specific use cases have been handled with "custom controls" which
 are implemented by having no native controls a set of elements added on top of
 the video.
 
@@ -40,8 +40,8 @@ is set.
 
 The main use case is to able to remove some features/elements from the native
 controls. Blacklisting elements could be done with keywords starting with `no`
-such as `nofullscreen` or `nodownload`. For example, `controlslist=”nofullscreen
-nodownload”`. It would tell the user agent to show the usual native control
+such as `nofullscreen` or `nodownload`. For example, `controlslist="nofullscreen
+nodownload"`. It would tell the user agent to show the usual native control
  without a fullscreen nor a download button.
 
 ### Whitelisting
@@ -49,8 +49,8 @@ nodownload”`. It would tell the user agent to show the usual native control
 A less common use case that could be resolved within the scope of this API
 change would be to allow a website to specify the exhaustive list of controls to
 show. In order to do so, the list of keywords will have to only contain
-whitelisted elements (without a no prefix). For example, `controlslist=”play
-timeline volume”` would allow a website to request the user agent to show native
+whitelisted elements (without a no prefix). For example, `controlslist="play
+timeline volume"` would allow a website to request the user agent to show native
 controls with only a play button, a timeline, and a volume control.
 
 The whilelisting proposal is here for completeness. The feature can be
@@ -65,7 +65,7 @@ available or by adding a play/pause button if all the elements have been
 removed.
 
 Blacklist and whitelists can technically be put together (ie.
-`controlslist=”play nodownload”`). In the spirit of blacklisting being the main
+`controlslist="play nodownload"`). In the spirit of blacklisting being the main
 feature of this proposal, blacklisting should always be used if one element is
 blacklisted, thus ignoring all whitelist keywords.
 
@@ -73,7 +73,7 @@ blacklisted, thus ignoring all whitelist keywords.
 
 The backward compatibility will be preserved given that a user agent that does
 not support the `controlsList` feature will just ignore
-`controlslist=”foo bar”`.
+`controlslist="foo bar"`.
 
 ### Keywords and feature detection
 
@@ -108,14 +108,16 @@ tokens](https://dom.spec.whatwg.org/#concept-supported-tokens).
 ### Examples
 
 Usage in HTML:
-`<video controls controlslist=’nofullscreen nodownload noremote foobar’></video>`
+````html
+<video controls controlslist="nofullscreen nodownload noremote foobar"></video>
+```
 
 Usage in Javascript:
 ```javascript
-var video = document.querySelector(‘video’);
+var video = document.querySelector('video');
 video.controls; // true
-video.controlsList; // “nofullscreen nodownload noremote” - “foobar” not present
-video.controlsList.remove(“noremote”);
-video.controlsList; // “nofullscreen nodownload” - “noremote” not present
-video.getAttribute(‘controlslist’); // “nofullscreen nodownload”
+video.controlsList; // "nofullscreen nodownload noremote" - "foobar" not present
+video.controlsList.remove('noremote');
+video.controlsList; // "nofullscreen nodownload" - "noremote" not present
+video.getAttribute('controlslist'); // "nofullscreen nodownload"
 ```
