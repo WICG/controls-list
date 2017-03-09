@@ -5125,11 +5125,11 @@ interface <dfn id=htmlmediaelement>HTMLMediaElement</dfn> : <a id=media-elements
 
   // controls
   [<a id=media-elements:cereactions-6 href=scripting.html#cereactions>CEReactions</a>] attribute boolean <a href=#dom-media-controls id=media-elements:dom-media-controls>controls</a>;
-  [<a id=media-elements:cereactions-7 href=scripting.html#cereactions>CEReactions</a>, SameObject, PutForwards=<a href=https://dom.spec.whatwg.org/#dom-domtokenlist-value id=media-elements:dom-domtokenlist-value data-x-internal=dom-domtokenlist-value>value</a>] readonly attribute <a id=media-elements:domtokenlist href=https://dom.spec.whatwg.org/#interface-domtokenlist data-x-internal=domtokenlist>DOMTokenList</a>
-      <a href=#dom-media-controlslist id=media-elements:dom-media-controlslist>controlsList</a>;
+  [SameObject, PutForwards=<a href=https://dom.spec.whatwg.org/#dom-domtokenlist-value id=media-elements:dom-domtokenlist-value data-x-internal=dom-domtokenlist-value>value</a>] readonly attribute
+      <a id=media-elements:domtokenlist href=https://dom.spec.whatwg.org/#interface-domtokenlist data-x-internal=domtokenlist>DOMTokenList</a> <a href=#dom-media-controlslist id=media-elements:dom-media-controlslist>controlsList</a>;
   attribute double <a href=#dom-media-volume id=media-elements:dom-media-volume>volume</a>;
   attribute boolean <a href=#dom-media-muted id=media-elements:dom-media-muted>muted</a>;
-  [<a id=media-elements:cereactions-8 href=scripting.html#cereactions>CEReactions</a>] attribute boolean <a href=#dom-media-defaultmuted id=media-elements:dom-media-defaultmuted>defaultMuted</a>;
+  [<a id=media-elements:cereactions-7 href=scripting.html#cereactions>CEReactions</a>] attribute boolean <a href=#dom-media-defaultmuted id=media-elements:dom-media-defaultmuted>defaultMuted</a>;
 
   // tracks
   [SameObject] readonly attribute <a href=#audiotracklist id=media-elements:audiotracklist>AudioTrackList</a> <a href=#dom-media-audiotracks id=media-elements:dom-media-audiotracks>audioTracks</a>;
@@ -8880,13 +8880,17 @@ red:89
   are <dfn id=attr-media-controlslist-nodownload><code>nodownload</code></dfn>, <dfn id=attr-media-controlslist-nofullscreen><code>nofullscreen</code></dfn>, and
   <dfn id=attr-media-controlslist-noremoteplayback><code>noremoteplayback</code></dfn>.
 
-  <p>The <code id=user-interface:attr-media-controlslist-nodownload><a href=#attr-media-controlslist-nodownload>nodownload</a></code> keyword causes the
-  download control to be hidden when using the user agent's own set of controls for the media
+  <p>The <code id=user-interface:attr-media-controlslist-nodownload><a href=#attr-media-controlslist-nodownload>nodownload</a></code> keyword hints that the
+  download control should be hidden when using the user agent's own set of controls for the media
   element. The <code id=user-interface:attr-media-controlslist-nofullscreen><a href=#attr-media-controlslist-nofullscreen>nofullscreen</a></code> keyword
-  causes the fullscreen mode control to be hidden when using the user agent's own set of controls
-  for the media element. The <code id=user-interface:attr-media-controlslist-noremoteplayback><a href=#attr-media-controlslist-noremoteplayback>noremoteplayback</a></code> keyword causes the remote
-  playback control to be hidden when using the user agent's own set of controls for the media
-  element.</p>
+  hints that the fullscreen mode control should be hidden when using the user agent's own set of
+  controls for the media element. The <code id=user-interface:attr-media-controlslist-noremoteplayback><a href=#attr-media-controlslist-noremoteplayback>noremoteplayback</a></code> keyword hints that the
+  remote playback control should be hidden when using the user agent's own set of controls for the
+  media element.</p>
+
+  <p class=note>Hiding these aspects of the user agent's own controls does not necessarily disable
+  the related functionality. For example, the user agent might present the same functionality
+  through a context menu or keyboard shortcut.</p>
 
   
 
@@ -8898,10 +8902,10 @@ red:89
   values defined in the <code id=user-interface:attr-media-controlslist-2><a href=#attr-media-controlslist>controlslist</a></code> attribute and
   supported by the user agent.</p>
 
-  <p>The user agent might ignore the author's preference depending on the environment, e.g.
-  <code id=user-interface:attr-media-controlslist-nofullscreen-2><a href=#attr-media-controlslist-nofullscreen>nofullscreen</a></code> keyword doesn't mean the
-  fullscreen control MUST be hidden for the user if the content area containing the video is small
-  (e.g. on a mobile device).</p>
+  <p>A user agent MAY ignore the author's preference when it makes sense.</p>
+
+  <p class=example>A user agent might ignore the <code id=user-interface:attr-media-controlslist-nofullscreen-2><a href=#attr-media-controlslist-nofullscreen>nofullscreen</a></code> keyword if the content area
+  containing the video is small, such as on a mobile device.</p>
 
   <hr>
 
