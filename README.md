@@ -17,3 +17,7 @@ This API is intended to help solve part of this problem by providing a solution 
 The solution is described in details in the [explainer](explainer.md).
 
 It is introducing a new attribute, `controlslist` that allows websites to blacklist or whitelist controls that should appear. The solution is meant to be incremental and start by only blacklisting of a few components and add more as requirements emerge.
+
+## Proposed spec change
+
+There's a [pull request](https://github.com/whatwg/html/pull/2426) to the WHATWG HTML spec and the [build](https://wicg.github.io/controls-list/html-output/multipage/embedded-content.html#attr-media-controlslist) of the spec with the change.
