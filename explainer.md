@@ -1,5 +1,7 @@
 # HTMLMediaElement controlsList explained
 
+## [Pull request to whatwg/html](https://github.com/whatwg/html/pull/2426)
+
 ## Objective
 
 Offers a way to control the native controls elements/buttons that are being
