@@ -110,7 +110,7 @@ tokens](https://dom.spec.whatwg.org/#concept-supported-tokens).
 ### Examples
 
 Usage in HTML:
-````html
+```html
 <video controls controlslist="nofullscreen nodownload noremote foobar"></video>
 ```
 
