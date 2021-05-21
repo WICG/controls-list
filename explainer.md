@@ -111,15 +111,15 @@ tokens](https://dom.spec.whatwg.org/#concept-supported-tokens).
 
 Usage in HTML:
 ```html
-<video controls controlslist="nofullscreen nodownload noremoteplayback foobar"></video>
+<video controls controlslist="nofullscreen nodownload noremoteplayback noplaybackrate foobar"></video>
 ```
 
 Usage in Javascript:
 ```javascript
 var video = document.querySelector('video');
 video.controls; // true
-video.controlsList; // "nofullscreen nodownload noremoteplayback" - "foobar" not present
+video.controlsList; // "nofullscreen nodownload noremoteplayback noplaybackrate" - "foobar" not present
 video.controlsList.remove('noremoteplayback');
-video.controlsList; // "nofullscreen nodownload" - "noremoteplayback" not present
-video.getAttribute('controlslist'); // "nofullscreen nodownload"
+video.controlsList; // "nofullscreen nodownload noplaybackrate" - "noremoteplayback" not present
+video.getAttribute('controlslist'); // "nofullscreen nodownload noplaybackrate"
 ```
