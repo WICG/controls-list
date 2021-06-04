@@ -99,7 +99,7 @@ blacklisting of new parts of the native controls.
 
 ```javascript
 partial interface HTMLMediaElement {
-  [CEReactions, SameObject, PutForwards=value] readonly attribute DOMTokenList controlsList;
+  [SameObject, PutForwards=value] readonly attribute DOMTokenList controlsList;
 };
 ```
 
