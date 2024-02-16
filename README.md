@@ -20,4 +20,4 @@ It is introducing a new attribute, `controlslist` that allows websites to blackl
 
 ## Proposed spec change
 
-There's a [pull request](https://github.com/whatwg/html/pull/2426) to the WHATWG HTML spec and the [build](https://wicg.github.io/controls-list/html-output/multipage/embedded-content.html#attr-media-controlslist) of the spec with the change.
+There's a [pull request](https://github.com/whatwg/html/pull/6715) to the WHATWG HTML spec and the [build](https://wicg.github.io/controls-list/html-output/multipage/embedded-content.html#attr-media-controlslist) of the spec with the change.
